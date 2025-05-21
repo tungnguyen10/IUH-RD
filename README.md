@@ -10,4 +10,4 @@ gulp >= 4.x.x
 ## Usage
 - dev:              gulp serve
 - build:            gulp / gulp build
-- compress images:  gulp imagemin
+- compress images:  gulp imagemin  
