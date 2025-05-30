@@ -1,13 +1,13 @@
-<div class="iuhFadeInScroll w-full relative" data-module="HomePartner">
+<div
+  class="iuhFadeInScroll w-full relative bg-navyBlue-50"
+  data-module="HomePartner"
+>
   <div
-    class="w-full max-w-[1200px] px-4 mx-auto pb-6 md:pb-[40px] flex flex-col"
+    class="w-full max-w-[1200px] px-4 md:px-[10px] mx-auto py-6 md:py-[40px] flex flex-col items-center md:flex-row"
   >
-    <h2
-      class="text-2xl lg:text-titleDK md:leading-[1] text-left lg:text-center font-bold text-titleColor h-10 lg:h-[50px]"
-    >
-      Đối tác
-    </h2>
-    <div class="w-full relative">
+    {% include './common/Title.twig' with { class: 'shrink-0 w-full md:w-2/12 text-3xl md:!text-[40px] ', text: 'Đối tác' } %}
+    <div class="w-full md:w-10/12 relative flex-1">
+      {#
       <div
         class="swiper-button-partner-prev hidden lg:block absolute top-1/2 -left-4 -translate-y-1/2 z-[3] cursor-pointer size-[30px] lg:size-[50px] p-[5px] rounded-full bg-white drop-shadow-btn-slide transition-all duration-500 ease-in hover:bg-gradient-to-r from-navyBlue-800 to-navyBlue-700 hover:text-white"
       >
@@ -26,6 +26,7 @@
           />
         </svg>
       </div>
+      #}
       <div class="swiper swiper_partner !py-5">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -95,6 +96,7 @@
           </div>
         </div>
       </div>
+      {#
       <div
         class="swiper-button-partner-next absolute hidden lg:block top-1/2 -right-4 -translate-y-1/2 z-[3] cursor-pointer size-[30px] lg:size-[50px] p-[5px] rounded-full bg-white drop-shadow-btn-slide transition-all duration-500 ease-in hover:bg-gradient-to-r from-navyBlue-800 to-navyBlue-700 hover:text-white"
       >
@@ -113,6 +115,7 @@
           />
         </svg>
       </div>
+      #}
     </div>
   </div>
 </div>

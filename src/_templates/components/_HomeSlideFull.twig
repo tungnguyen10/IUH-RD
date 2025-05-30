@@ -1,30 +1,56 @@
 <div class="swiper swiper_slidefull" data-module="SwiperFullscreen">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<picture>
-				<source srcset="assets/images/slide3.png" media="(min-width: 767px)">
-				<img src="assets/images/slide3mb.png" alt="slide3" class="w-full"/>
-			</picture>
-		</div>
-		<div class="swiper-slide">
-			<picture>
-				<source srcset="assets/images/slide1.png" media="(min-width: 767px)">
-				<img src="assets/images/slide1mb.png" alt="slide1" class="w-full"/>
-			</picture>
-		</div>
-		<div class="swiper-slide">
-			<picture>
-				<source srcset="assets/images/slide2.png" media="(min-width: 767px)">
-				<img src="assets/images/slide2mb.png" alt="slide2" class="w-full "/>
-			</picture>
-		</div>
-		<div class="swiper-slide">
-			<picture>
-				<source srcset="assets/images/slide4.jpg" media="(min-width: 767px)">
-				<img src="assets/images/slide4mb.jpg" alt="slide4" class="w-full "/>
-			</picture>
-		</div>
-	</div>
-	<div class="swiper-pagination"></div>
+  <div class="swiper-wrapper">
+    {% for i in 1..3 %}
+    <div class="swiper-slide">
+      <div class="relative size-full">
+        <picture>
+          <source srcset="assets/images/slide.jpg" media="(min-width: 767px)" />
+          <img
+            src="assets/images/slide.jpg"
+            alt="slide3"
+            class="size-full absolute top-0 left-0 object-cover pointer-events-none"
+          />
+        </picture>
+        <div class="mx-auto w-full max-w-[1200px] px-4 relative py-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 flex-wrap items-center gap-6">
+            <div class="flex flex-col gap-4 items-start">
+              <h2
+                class="font-lexend text-4xl lg:text-[50px] md:leading-tight font-bold text-white"
+              >
+                Trao Quyền<br />
+                Tương Lai Bằng <br />Kỹ Năng Số
+              </h2>
+              <div class="text-lg font-semibold text-[#83DAFF]">
+                Tham gia ngay các khoá học về AI, Data,<br />
+                Design & nhiều hơn nữa.
+              </div>
+              {% include './common/Bottom.twig' with { class: '', variable:
+              'banner', link: '', text: 'Đăng ký ngay' } %}
+            </div>
+            <div>
+              <img src="assets/images/banner.png" alt="slide3" class="w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="lg:flex gap-4 hidden items-start w-full max-w-[1200px] px-4 absolute z-40 left-1/2 -translate-x-1/2 bottom-10">
+    <!-- Prev Button -->
+    <div
+      class="swiper-banner-prev flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer transition-transform duration-300 hover:scale-110 hover:bg-blue-100"
+    >
+      <i class="fa-solid fa-caret-left text-2xl text-navyBlue-800 transition-colors duration-300 group-hover:text-navyBlue-800"></i>
+    </div>
 
+    <!-- Next Button -->
+    <div
+      class="swiper-banner-next flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer transition-transform duration-300 hover:scale-110 hover:bg-blue-100"
+    >
+      <i class="fa-solid fa-caret-right text-2xl text-navyBlue-800 transition-colors duration-300 group-hover:text-navyBlue-800"></i>
+    </div>
+  </div>
+
+  <div class="swiper-pagination"></div>
 </div>

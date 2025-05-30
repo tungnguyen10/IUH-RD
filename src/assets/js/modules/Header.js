@@ -4,8 +4,9 @@ export default class Header extends BaseModule {
     // Get main elements with null checks
     this.header = document.querySelector(".header-nav");
     if (!this.header) return;
-
+    this.headerTop = document.querySelector(".header-top");
     this.hamburger = this.header.querySelector(".hamburger-menu");
+
     this.closeBtn = this.header.querySelector(".close-menu");
     this.mainNav = this.header.querySelector(".main-nav");
 
@@ -23,10 +24,34 @@ export default class Header extends BaseModule {
     this.initSubMenus();
     this.handleResize();
     this.initMobileSubmenus();
-    this.languageSwitcher();
-    this.initLanguageSwitcher();
-  }
 
+    // this.languageSwitcher();
+    // this.initLanguageSwitcher();
+    this.initHeaderTopScroll();
+  }
+  initHeaderTopScroll() {
+    if (!this.headerTop || !this.header) return;
+    let isHidden = false;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0 && !isHidden) {
+        this.header.style.position = "fixed";
+        this.headerTop.classList.add("is-hidden");
+        setTimeout(() => {
+          if (this.headerTop.classList.contains("is-hidden")) {
+            this.headerTop.style.display = "none";
+          }
+        }, 200);
+        isHidden = true;
+      } else if (window.scrollY === 0 && isHidden) {
+        this.headerTop.style.display = "";
+        this.header.style.position = "";
+        void this.headerTop.offsetWidth;
+        this.headerTop.classList.remove("is-hidden");
+        isHidden = false;
+      }
+    });
+  }
   languageSwitcher() {
     const languageSwitcher = document.querySelector(".language-switcher");
     const languageText = languageSwitcher.querySelector(

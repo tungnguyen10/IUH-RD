@@ -1,8 +1,7 @@
 footer {
-  background: url(../images/bg-footermb.png) no-repeat top center;
+  background: linear-gradient(86deg, var(--color-main-800, #0000A8) 8.08%, var(--700, #0000CF) 32.04%, var(--800, #0000A8) 100%);
   background-size: cover;
   @media (min-width: 1024px) {
-    background: url(../images/bg-footer.png) no-repeat center center;
     background-size: cover;
   }
 }

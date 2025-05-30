@@ -1,0 +1,105 @@
+<div class="iuhFadeInScroll w-full relative" data-module="HomeData">
+  <div
+    class="w-full max-w-[1200px] px-4 md:px-[10px] mx-auto py-12 md:py-18 flex flex-col"
+  >
+    {% include './common/Title.twig' with { class: '', text: 'Cơ sở dữ liệu' }
+    %}
+    <div class="relative mt-8 md:mt-12">
+      <div class="swiper swiper_data w-full !pb-16">
+        <div class="swiper-wrapper">
+          {% for i in 1..8 %}
+          <div class="swiper-slide">
+            <div class="flex flex-col w-full">
+              <div
+                class="relative aspect-[1/1] max-w-[280px] mx-auto image-hover mb-[15px] cursor-pointer"
+              >
+                <a href="#" class="size-full"
+                  ><img
+                    src="assets/images/data.png"
+                    alt="data"
+                    class="object-cover size-full"
+                /></a>
+              </div>
+              <h3
+                class="text-black hover:text-navyBlue-800 cursor-pointer transition duration-500 uppercase line-clamp-3 text-center text-xl font-semibold"
+              >
+                <a href="#">CƠ SỞ DỮ LIỆU QUỐC GIA VỀ KHOA HỌC & CÔNG NGHỆ</a>
+              </h3>
+              <div class="text-center text-base text-black1/80 mt-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      {#
+      <div
+        class="swiper-button-custom-prev hidden lg:block hover:opacity-50 absolute top-1/2 right-full z-50 -translate-x-1/2 cursor-pointer size-[50px] p-[5px] rounded-full transition-all duration-500 ease-in"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="39"
+          height="39"
+          viewBox="0 0 39 39"
+          fill="none"
+        >
+          <mask
+            id="mask0_177_631"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="39"
+            height="39"
+          >
+            <rect width="38.5566" height="38.5566" fill="#D9D9D9" />
+          </mask>
+          <g mask="url(#mask0_177_631)">
+            <path
+              d="M20.8849 30.5241L3.21307 19.2784L20.8849 8.03271V17.6719H35.3436V20.8849H20.8849V30.5241Z"
+              fill="#0000A8"
+            />
+          </g>
+        </svg>
+      </div>
+      <div
+        class="swiper-button-custom-next hidden lg:block hover:opacity-50 absolute top-1/2 left-[104%] z-50 -translate-x-1/2 cursor-pointer size-[50px] p-[5px] rounded-full transition-all duration-500 ease-in"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="39"
+          height="39"
+          viewBox="0 0 39 39"
+          fill="none"
+        >
+          <mask
+            id="mask0_177_627"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="39"
+            height="39"
+          >
+            <rect
+              x="0.443359"
+              y="0.443359"
+              width="38.5566"
+              height="38.5566"
+              fill="#D9D9D9"
+            />
+          </mask>
+          <g mask="url(#mask0_177_627)">
+            <path
+              d="M18.1151 30.9674V21.3283H3.6564V18.1152H18.1151V8.47607L35.7869 19.7218L18.1151 30.9674Z"
+              fill="#0000A8"
+            />
+          </g>
+        </svg>
+      </div>
+      #}
+    </div>
+  </div>
+</div>

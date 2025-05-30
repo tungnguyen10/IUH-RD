@@ -1,0 +1,58 @@
+<div class="iuhFadeInScroll w-full relative">
+	<div class="w-full max-w-[1200px] mx-auto pb-12 px-4 flex flex-col items-center">
+		{% include './common/Title.twig' with { class: '', text: 'Khóa học nổi bật' }
+    %}
+		<!-- Tabs -->
+		<div class="flex flex-col gap-3 my-8 w-full sm:flex-row sm:justify-center">
+			<button class="bg-[#fafafa] border border-[#EEEEEE] text-black px-6 py-2 rounded font-semibold focus:outline-none iuhBtnTab active w-full sm:w-auto" data-tab="course1">KHÓA HỌC ONLINE</button>
+			<button class="bg-[#fafafa] border border-[#EEEEEE] text-black px-6 py-2 rounded font-semibold focus:outline-none iuhBtnTab w-full sm:w-auto" data-tab="course2">KHÓA HỌC OFFLINE</button>
+			<button class="bg-[#fafafa] border border-[#EEEEEE] text-black px-6 py-2 rounded font-semibold focus:outline-none iuhBtnTab w-full sm:w-auto" data-tab="course3">DỊCH VỤ ĐÀO TẠO DOANH NGHIỆP</button>
+		</div>
+		<!-- Courses Grid -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full iuhContentTab" id="course1">
+     {% for i in 1..3 %}
+			<div class="rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm flex flex-col p-3 pb-5 group/course transition-all duration-500 animate-fadeInUp">
+				<div class="relative image-hover aspect-[360/270] rounded-md">
+					<img src="assets/images/nghiencuu.jpg" alt="Course 3" class="size-full object-cover"/>
+					<span class="absolute top-3 left-3 bg-navyBlue-800 text-white text-sm font-semibold px-3 py-1 rounded animate-fadeInUp" style="animation-delay: 0.1s;">1.250.000 đ</span>
+				</div>
+				<div class="flex-1 flex flex-col pt-5">
+					<div class="text-navyBlue-800 text-lg font-semibold mb-1 animate-fadeInUp" style="animation-delay: 0.2s;">Khóa học nổi bật</div>
+					<div class="text-black text-xl font-bold mb-2 animate-fadeInUp" style="animation-delay: 0.3s;">2 tháng</div>
+				</div>
+				{% include './common/Bottom.twig' with { class: '', link: '#', text: 'Đăng ký ngay' } %}
+			</div>
+      {% endfor %}
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full iuhContentTab" id="course2">
+			{% for i in 1..3 %}
+			<div class="rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm flex flex-col p-3 pb-5 group/course transition-all duration-500 animate-fadeInUp">
+				<div class="relative image-hover aspect-[360/270] rounded-md">
+					<img src="assets/images/nghiencuu.jpg" alt="Course 3" class="size-full object-cover"/>
+					<span class="absolute top-3 left-3 bg-navyBlue-800 text-white text-sm font-semibold px-3 py-1 rounded animate-fadeInUp" style="animation-delay: 0.1s;">1.250.000 đ</span>
+				</div>
+				<div class="flex-1 flex flex-col pt-5">
+					<div class="text-navyBlue-800 text-lg font-semibold mb-1 animate-fadeInUp" style="animation-delay: 0.2s;">Khóa học nổi bật</div>
+					<div class="text-black text-xl font-bold mb-2 animate-fadeInUp" style="animation-delay: 0.3s;">2 tháng</div>
+				</div>
+				{% include './common/Bottom.twig' with { class: '', link: '#', text: 'Đăng ký ngay' } %}
+			</div>
+      {% endfor %}
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full iuhContentTab" id="course3">
+			{% for i in 1..3 %}
+			<div class="rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm flex flex-col p-3 pb-5 group/course transition-all duration-500 animate-fadeInUp">
+				<div class="relative image-hover aspect-[360/270] rounded-md">
+					<img src="assets/images/nghiencuu.jpg" alt="Course 3" class="size-full object-cover"/>
+					<span class="absolute top-3 left-3 bg-navyBlue-800 text-white text-sm font-semibold px-3 py-1 rounded animate-fadeInUp" style="animation-delay: 0.1s;">1.250.000 đ</span>
+				</div>
+				<div class="flex-1 flex flex-col pt-5">
+					<div class="text-navyBlue-800 text-lg font-semibold mb-1 animate-fadeInUp" style="animation-delay: 0.2s;">Khóa học nổi bật</div>
+					<div class="text-black text-xl font-bold mb-2 animate-fadeInUp" style="animation-delay: 0.3s;">2 tháng</div>
+				</div>
+				{% include './common/Bottom.twig' with { class: '', link: '#', text: 'Đăng ký ngay' } %}
+			</div>
+      {% endfor %}
+		</div>
+	</div>
+</div>

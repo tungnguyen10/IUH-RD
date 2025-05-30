@@ -1,0 +1,21 @@
+{% if variable is defined and variable == 'button' %}
+<div class="rounded-md border border-navyBlue-800 py-2 px-4 text-center text-base transition-all shadow-sm hover:shadow-lg text-navyBlue-800 hover:text-white hover:bg-navyBlue-800 hover:border-navybg-navyBlue-800 duration-500  {{ class is defined and class ? ' ' ~ class : '' }}">
+  <a href="{{ link | default('#') }}" class="flex gap-2 items-center">
+    {{ text | default('Xem tất cả') }} <i class="fa-solid fa-angles-right"></i>
+  </a>
+</div>
+{% elseif variable is defined and variable == 'banner' %}
+<div class="rounded-md border border-white py-2 px-4 bg-white text-center text-base transition-all shadow-sm hover:shadow-lg text-navyBlue-800 hover:text-white hover:bg-navyBlue-800 hover:border-navyBlue-800 duration-500 font-semibold  {{ class is defined and class ? ' ' ~ class : '' }}">
+  <a href="{{ link | default('#') }}" class="flex gap-2 items-center">
+    {{ text | default('Xem tất cả') }} <i class="fa-solid fa-angles-right"></i>
+  </a>
+</div>
+{% else %}
+<div
+  class="iuh-btn flex justify-center cursor-pointer {{ class is defined and class ? ' ' ~ class : '' }}"
+>
+  <a href="{{ link | default('#') }}">
+    {{ text | default('Xem tất cả') }}
+  </a>
+</div>
+{% endif %}

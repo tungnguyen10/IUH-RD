@@ -11,7 +11,7 @@ export default class SwiperFullscreen extends BaseModule {
     Swiper.use([Navigation, Pagination, Autoplay]);
 
     this.slidefull = new Swiper(".swiper_slidefull", {
-      loop: true,
+      // loop: true,
       speed: 1000,
       autoplay: {
         delay: 4000,
@@ -23,8 +23,8 @@ export default class SwiperFullscreen extends BaseModule {
         clickable: true,
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-banner-next",
+        prevEl: ".swiper-banner-prev",
       },
     });
   }

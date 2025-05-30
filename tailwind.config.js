@@ -13,15 +13,17 @@ module.exports = {
       },
       screens: {
         menuMb: "1101px",
+        container: "1180px",
       },
 
       fontFamily: {
-        montserrat: ['"Montserrat"', "serif"],
+        lexend: ["Lexend", "sans-serif"],
       },
       boxShadow: {
         accredited: "3px 3px 12px 0px rgba(0, 0, 207, 0.20)",
         news: "3px 3px 12px 0px rgba(0, 0, 207, 0.20)",
         childPage: "9px 0 20px 0px rgb(0 4 168 / 18%);",
+        research: "2px 2px 20px 0px rgba(0, 0, 207, 0.30)",
       },
       dropShadow: {
         "btn-slide": "2px 2px 10px rgba(0, 0, 0, 0.05)",
@@ -50,6 +52,8 @@ module.exports = {
         },
       },
       backgroundImage: {
+        navyLight: "linear-gradient(0deg,  #EDF9FF 0%,  #EDF9FF 100%)",
+        navyDark: "linear-gradient(90deg, #0000CF 0%, #0000A8 100%)",
         vn: "url('public/images/vietnam.png')",
         eng: "url('public/images/eng.webp')",
       },
@@ -101,7 +105,7 @@ module.exports = {
         yellow: "#fff434",
         yellowLogo: "#e9b20f",
         black: "#393939",
-        black1: "#333333",
+        black1: "#424242",
         black2: "#666666",
         stroke: "#E3E3E3",
         stroke1: "#F9F9F9",

@@ -1,0 +1,384 @@
+{% macro renderMenu(items, level) %}
+<ul
+  class="{% if level == 0 %} flex flex-row menuMb:h-full py-2.5 menuMb:items-center gap-4 w-full justify-between 
+  {% elseif level == 1 %} menuMb:absolute bg-white w-full menuMb:w-60 top-full left-0 transform opacity-0 invisible group-hover/sub-menu:opacity-100 group-hover/sub-menu:visible translate-y-2 group-hover/sub-menu:translate-y-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-t-3 border-navyBlue-900 z-50 
+  {% else %} absolute bg-white min-w-full menuMb:w-[350px] grid grid-cols-1 menuMb:grid-cols-2 top-0 left-full transform opacity-0 invisible group-hover/sub1-menu:opacity-100 group-hover/sub1-menu:visible translate-x-2 group-hover/sub1-menu:translate-x-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-l-3 overflow-hidden border-navyBlue-900 {% endif %}"
+>
+  {% for item in items %}
+  <li
+    class="{% if level == 0 %} group/sub-menu text-navyBlue-50 relative h-full flex flex-col menuMb:flex-row items-center border-b menuMb:border-none {% else %} group/sub1-menu relative border-t menuMb:border-b border-gray-100 last:border-none {% endif %}"
+  >
+    <a
+      href="{{ item.url }}"
+      class="{% if level == 0 %} text-sm h-full text-navyBlue-800 menuMb:text-navyBlue-50 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 hover:text-navyBlue-800 transition-all duration-200 uppercase font-normal 
+      {% else %} text-sm w-full h-full text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal{% endif %}"
+    >
+      {{ item.label }}
+      {% if item.submenu %}
+      <svg
+        class="w-4 h-4 transition-transform duration-300 {% if level == 0 %}group-hover/sub-menu:rotate-180{% else %}menuMb:group-hover/sub1-menu:rotate-[-90deg]{% endif %}"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M9 14L4 9M20 9L12 17"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      {% endif %}
+    </a>
+    {% if item.submenu %}
+    {{ _self.renderMenu(item.submenu, level + 1) }}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %} {#
+<ul
+  class="flex flex-row justify-start menuMb:h-full menuMb:items-center gap-4 flex-1"
+>
+  <li
+    class="group/sub-menu text-navyBlue-50 relative h-full flex flex-col menuMb:flex-row items-center border-b menuMb:border-none"
+  >
+    <a
+      href="#"
+      class="relative font-semibold uppercase px-4 py-2 flex items-center gap-2 transition-all duration-300 hover:text-navyBlue-800 h-full hover:bg-navyBlue-50"
+    >
+      Giới thiệu
+      <svg
+        class="w-4 h-4 transition-transform duration-300 group-hover/sub-menu:rotate-180"
+        viewbox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 14L4 9M20 9L12 17"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </a>
+    <!-- Primary Submenu -->
+    <ul
+      class="menuMb:absolute bg-white w-full menuMb:w-60 top-full left-0 transform opacity-0 invisible group-hover/sub-menu:opacity-100 group-hover/sub-menu:visible translate-y-2 group-hover/sub-menu:translate-y-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-t-3 border-navyBlue-900 z-50"
+    >
+      <li
+        class="group/sub1-menu relative border-t menuMb:border-b border-gray-100 last:border-none"
+      >
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Giới thiệu chung
+          <svg
+            class="w-4 h-4 transition-transform duration-300 menuMb:group-hover/sub1-menu:rotate-[-90deg]"
+            viewbox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9L9 4M9 20L17 12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- Secondary Submenu -->
+        <ul
+          class="absolute bg-white min-w-full menuMb:w-[350px] grid grid-cols-1 menuMb:grid-cols-2 top-0 left-full transform opacity-0 invisible group-hover/sub1-menu:opacity-100 group-hover/sub1-menu:visible translate-x-2 group-hover/sub1-menu:translate-x-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-l-3 border-navyBlue-900"
+        >
+          {% for i in 1..10 %}
+          <li
+            class="border-t w-full menuMb:border-b min-w-40 border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm w-full h-full text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Webdesign
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li class="border-t menuMb:border-b border-gray-100 last:border-none">
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Đội ngũ
+        </a>
+      </li>
+
+      <li
+        class="group/sub1-menu relative border-t menuMb:border-b border-gray-100 last:border-none"
+      >
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Sơ đồ bộ máy tổ chức
+          <svg
+            class="w-4 h-4 transition-transform duration-300 menuMb:group-hover/sub1-menu:rotate-[-90deg]"
+            viewbox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9L9 4M9 20L17 12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- Secondary Submenu -->
+        <ul
+          class="absolute bg-white w-full menuMb:w-60 top-0 left-full transform opacity-0 invisible group-hover/sub1-menu:opacity-100 group-hover/sub1-menu:visible translate-x-2 group-hover/sub1-menu:translate-x-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-l-3 border-navyBlue-900"
+        >
+          <li
+            class="border-t menuMb:border-b border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Webdesign
+            </a>
+          </li>
+          <li
+            class="border-t menuMb:border-b border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Digital marketing
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="border-b border-gray-100 last:border-none">
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Giá trị cốt lõi
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li
+    class="group/sub-menu text-navyBlue-50 relative h-full flex flex-col menuMb:flex-row items-center border-b menuMb:border-none"
+  >
+    <a
+      href="/about.html"
+      class="relative font-semibold uppercase px-4 py-2 gap-2 transition-all duration-300 hover:text-navyBlue-800 flex items-center h-full hover:bg-navyBlue-50"
+    >
+      Đào tạo
+    </a>
+  </li>
+  <li
+    class="group/sub-menu text-navyBlue-50 relative h-full flex flex-col menuMb:flex-row items-center border-b menuMb:border-none"
+  >
+    <a
+      href="#"
+      class="relative font-semibold uppercase px-4 py-2 gap-2 transition-all duration-300 hover:text-navyBlue-800 flex items-center h-full hover:bg-navyBlue-50"
+    >
+      Tuyển sinh
+    </a>
+  </li>
+  <li
+    class="group/sub-menu text-navyBlue-50 relative h-full flex flex-col menuMb:flex-row items-center border-b menuMb:border-none"
+  >
+    <a
+      href="#"
+      class="relative font-semibold uppercase px-4 py-2 gap-2 transition-all duration-300 hover:text-navyBlue-800 flex items-center h-full hover:bg-navyBlue-50"
+    >
+      Nghiên cứu khoa học
+    </a>
+  </li>
+  <li
+    class="group/sub-menu text-navyBlue-50 relative h-full flex flex-col menuMb:flex-row items-center border-b menuMb:border-none"
+  >
+    <a
+      href="#"
+      class="relative font-semibold uppercase px-4 py-2 gap-2 transition-all duration-300 hover:text-navyBlue-800 flex items-center h-full hover:bg-navyBlue-50"
+    >
+      Sinh viên
+    </a>
+  </li>
+  <li
+    class="group/sub-menu text-navyBlue-50 relative h-full flex flex-col menuMb:flex-row items-center border-b menuMb:border-none"
+  >
+    <a
+      href="#"
+      class="relative font-semibold uppercase px-4 py-2 gap-2 transition-all duration-300 hover:text-navyBlue-800 flex items-center h-full hover:bg-navyBlue-50"
+    >
+      Văn bằng
+      <svg
+        class="w-4 h-4 transition-transform duration-300 menuMb:group-hover/sub-menu:rotate-180"
+        viewbox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 14L4 9M20 9L12 17"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </a>
+    <!-- Primary Submenu -->
+    <ul
+      class="menuMb:absolute bg-white w-full menuMb:w-60 top-full transform opacity-0 invisible group-hover/sub-menu:opacity-100 group-hover/sub-menu:visible translate-y-2 group-hover/sub-menu:translate-y-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-t-3 border-navyBlue-900 z-50"
+    >
+      <li
+        class="group/sub1-menu relative border-t menuMb:border-b border-gray-100 last:border-none"
+      >
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Giới thiệu chung
+          <svg
+            class="w-4 h-4 transition-transform duration-300 menuMb:group-hover/sub1-menu:rotate-[-90deg]"
+            viewbox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9L9 4M9 20L17 12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- Secondary Submenu -->
+        <ul
+          class="absolute bg-white min-w-full menuMb:w-[350px] grid grid-cols-1 menuMb:grid-cols-2 top-0 left-full transform opacity-0 invisible group-hover/sub1-menu:opacity-100 group-hover/sub1-menu:visible translate-x-2 group-hover/sub1-menu:translate-x-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-l-3 border-navyBlue-900"
+        >
+          {% for i in 1..10 %}
+          <li
+            class="border-t w-full menuMb:border-b min-w-40 border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm w-full h-full text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Webdesign
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li class="border-t menuMb:border-b border-gray-100 last:border-none">
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Đội ngũ
+        </a>
+      </li>
+
+      <li
+        class="group/sub1-menu relative border-t menuMb:border-b border-gray-100 last:border-none"
+      >
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Sơ đồ bộ máy tổ chức
+          <svg
+            class="w-4 h-4 transition-transform duration-300 menuMb:group-hover/sub1-menu:rotate-[-90deg]"
+            viewbox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9L9 4M9 20L17 12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- Secondary Submenu -->
+        <ul
+          class="absolute bg-white min-w-full menuMb:w-[350px] grid grid-cols-1 menuMb:grid-cols-2 top-0 left-full transform opacity-0 invisible group-hover/sub1-menu:opacity-100 group-hover/sub1-menu:visible translate-x-2 group-hover/sub1-menu:translate-x-0 transition-all duration-300 ease-in-out shadow-lg rounded-bl-lg rounded-br-lg border-l-3 border-navyBlue-900"
+        >
+          <li
+            class="border-t menuMb:border-b border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Webdesign
+            </a>
+          </li>
+          <li
+            class="border-t menuMb:border-b border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Digital marketing
+            </a>
+          </li>
+          <li
+            class="border-t menuMb:border-b border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Digital marketing
+            </a>
+          </li>
+          <li
+            class="border-t menuMb:border-b border-gray-100 menuMb:last:border-none"
+          >
+            <a
+              href="#"
+              class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+            >
+              Digital marketing
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="border-b border-gray-100 last:border-none">
+        <a
+          href="#"
+          class="text-sm text-navyBlue-900 px-4 py-3 flex items-center justify-between hover:bg-navyBlue-50 transition-all duration-200 hover:pl-6 uppercase font-normal"
+        >
+          Giá trị cốt lõi
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+#}

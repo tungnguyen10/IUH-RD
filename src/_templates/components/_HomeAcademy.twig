@@ -1,0 +1,27 @@
+<div class="iuhFadeInScroll w-full relative py-12 md:py-20">
+  <div
+    class="max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row items-center px-4"
+  >
+    <!-- Left: Main image and two small images -->
+    <div class="w-full relative lg:ml-[-130px]">
+      <img
+        src="assets/images/main-pc.png"
+        alt=""
+        class="size-full object-cover"
+      />
+    </div>
+    <!-- Right: Text content -->
+    <div class="w-full lg:w-1/2 mt-0 mb-8 lg:mb-0 lg:mt-8 flex flex-col ml-auto lg:pl-[8%] shrink-0">
+      {% include './common/Title.twig' with { class: '!text-left', text:
+      'Academy – Hành Trang Kiến Thức Cho Người Dẫn Đầu' } %}
+
+      <p class="text-black text-lg mb-8 mt-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      {% include './common/Bottom.twig' with { class: 'lg:max-w-[180px]', link: '/nghien-cuu', text: 'Xem Chi Tiết' } %}
+    </div>
+  </div>
+</div>

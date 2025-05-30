@@ -26,7 +26,6 @@ header {
 
     // Desktop submenu behavior (hover)
     @media (min-width: 1101px) {
-      height: 80px;
       .group\/sub-menu > ul,
       .group\/sub1-menu > ul {
         display: none;
@@ -91,12 +90,6 @@ header {
             padding: 15px 20px;
             justify-content: space-between;
             width: 100%;
-            color: var(--navy-blue-900);
-
-            &:hover {
-              background: var(--navy-blue-50);
-            }
-
             // Rotate arrow on active submenu
             svg {
               transition: transform 0.3s ease;
@@ -133,4 +126,14 @@ header {
   @media (max-width: 1200px) {
     display: block;
   }
+}
+
+.header-top {
+  transition: opacity 0.3s;
+  opacity: 1;
+  pointer-events: auto;
+}
+.header-top.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
