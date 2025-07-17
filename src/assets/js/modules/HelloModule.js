@@ -32,8 +32,9 @@ export default class HelloModule extends BaseModule {
     this.initTabsGlobal();
     this.initMobileMenu();
     this.initFadeInOnScroll();
+    this.initContactPopup();
   }
- 
+  
   moveElementsToBody() {
     const main = document.querySelector("main");
     if (!main) return;
@@ -357,6 +358,33 @@ export default class HelloModule extends BaseModule {
       };
 
       link.addEventListener("click", handleClick);
+    });
+  }
+
+  initContactPopup() {
+    const modal = document.getElementById('contactModal');
+    if (!modal) return;
+    const closeBtn = modal.querySelector('.close-contact-modal');
+    // All contact buttons
+    document.querySelectorAll('.contact-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+      });
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('opacity-100');
+      });
+    }
+    // Close modal on outside click
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('opacity-100');
+      }
     });
   }
 }

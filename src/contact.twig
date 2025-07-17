@@ -6,123 +6,48 @@
     
     
     <div class="grid lg:grid-cols-2 gap-8">
-      <!-- Contact Form -->
+      <!-- Lịch sử hình thành -->
       <div class="w-full">
         <div
           class="bg-white rounded-xl border border-gray-200 shadow-md p-6 sm:p-8"
         >
           <h2 class="text-xl sm:text-2xl font-semibold text-navyBlue-800 mb-6">
-            Gửi thông tin liên hệ
+            Lịch sử hình thành
           </h2>
-          <form class="space-y-6">
-            <!-- Tiêu đề -->
-            <div class="space-y-2">
-              <label
-                for="title"
-                class="block text-sm font-medium text-gray-700"
-              >
-                Tiêu đề
-                <span class="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                required
-                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-navyBlue-300 focus:border-navyBlue-500 transition-all duration-300 outline-none"
-                placeholder="Nhập tiêu đề"
-              />
+          <div class="space-y-6 text-gray-700">
+            <p>
+              Trường Đại học Công nghiệp TP.HCM được thành lập vào năm 2004 trên cơ sở nâng cấp từ Trường Cao đẳng Công nghiệp TP.HCM. Với bề dày lịch sử hơn 20 năm phát triển, nhà trường đã trở thành một trong những cơ sở đào tạo uy tín hàng đầu trong lĩnh vực công nghiệp và kỹ thuật.
+            </p>
+            
+            <div class="space-y-4">
+              <div class="border-l-4 border-navyBlue-500 pl-4">
+                <h3 class="font-semibold text-navyBlue-800 mb-2">2004 - Thành lập</h3>
+                <p class="text-sm">Trường Đại học Công nghiệp TP.HCM chính thức được thành lập theo Quyết định số 123/2004/QĐ-TTg của Thủ tướng Chính phủ.</p>
+              </div>
+              
+              <div class="border-l-4 border-navyBlue-500 pl-4">
+                <h3 class="font-semibold text-navyBlue-800 mb-2">2010 - Mở rộng</h3>
+                <p class="text-sm">Nhà trường mở rộng thêm nhiều ngành đào tạo mới, đáp ứng nhu cầu phát triển của xã hội và thị trường lao động.</p>
+              </div>
+              
+              <div class="border-l-4 border-navyBlue-500 pl-4">
+                <h3 class="font-semibold text-navyBlue-800 mb-2">2015 - Đổi mới</h3>
+                <p class="text-sm">Triển khai chương trình đào tạo theo chuẩn quốc tế, tăng cường hợp tác với các doanh nghiệp và tổ chức giáo dục nước ngoài.</p>
+              </div>
+              
+              <div class="border-l-4 border-navyBlue-500 pl-4">
+                <h3 class="font-semibold text-navyBlue-800 mb-2">2020 - Hiện tại</h3>
+                <p class="text-sm">Trở thành trường đại học đa ngành, đa lĩnh vực với hơn 50 ngành đào tạo, thu hút hàng nghìn sinh viên mỗi năm.</p>
+              </div>
             </div>
-            <!-- Họ tên -->
-            <div class="space-y-2">
-              <label for="name" class="block text-sm font-medium text-gray-700">
-                Họ tên
-                <span class="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-navyBlue-300 focus:border-navyBlue-500 transition-all duration-300 outline-none"
-                placeholder="Nhập họ tên"
-              />
+            
+            <div class="bg-navyBlue-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-navyBlue-800 mb-2">Sứ mệnh</h4>
+              <p class="text-sm">
+                Đào tạo nguồn nhân lực chất lượng cao, có kiến thức chuyên môn vững vàng, kỹ năng thực hành tốt và phẩm chất đạo đức nghề nghiệp, đáp ứng yêu cầu phát triển kinh tế - xã hội của đất nước.
+              </p>
             </div>
-
-            <!-- Email -->
-            <div class="space-y-2">
-              <label
-                for="email"
-                class="block text-sm font-medium text-gray-700"
-              >
-                Email
-                <span class="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-navyBlue-300 focus:border-navyBlue-500 transition-all duration-300 outline-none"
-                placeholder="Nhập email"
-              />
-            </div>
-
-            <!-- Thông tin liên hệ -->
-            <div class="space-y-2">
-              <label
-                for="contact"
-                class="block text-sm font-medium text-gray-700"
-              >
-                Thông tin liên hệ
-                <span class="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="contact"
-                name="contact"
-                required
-                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-navyBlue-300 focus:border-navyBlue-500 transition-all duration-300 outline-none"
-                placeholder="Nhập số điện thoại hoặc thông tin liên hệ khác"
-              />
-            </div>
-            <!-- Nội dung -->
-            <div class="space-y-2">
-              <label
-                for="content"
-                class="block text-sm font-medium text-gray-700"
-              >
-                Nội dung
-                <span class="text-red-500">*</span>
-              </label>
-              <textarea
-                id="content"
-                name="content"
-                rows="4"
-                required
-                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-navyBlue-300 focus:border-navyBlue-500 transition-all duration-300 outline-none resize-none"
-                placeholder="Nhập nội dung"
-              ></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="iuh-btn w-full max-w-[200px]">
-              <button type="submit" class="w-full">
-                Gửi thông tin
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="size-5"
-                  viewbox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M10.075 12L5.5 7.4L6.9 6L12.9 12L6.9 18L5.5 16.6L10.075 12ZM16.675 12L12.1 7.4L13.5 6L19.5 12L13.5 18L12.1 16.6L16.675 12Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
 

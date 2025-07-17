@@ -1,116 +1,139 @@
 <!DOCTYPE html>
 <html class="no-js" lang="vi">
 
-<head>
-  <!-- Primary Meta Tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="title" content="{{ title }}" />
-  <meta name="description"
-    content="{{ description | default('Trường Đại học Công nghiệp TP.HCM - IUH là trường đại học công lập đào tạo đa ngành, đa lĩnh vực.') }}" />
-  <meta name="keywords"
-    content="{{ keywords | default('IUH, Đại học Công nghiệp, Trường Đại học Công nghiệp TP.HCM, tuyển sinh, đào tạo') }}" />
-  <meta name="author" content="IUH - Industrial University of Ho Chi Minh City" />
-  <meta name="robots" content="index, follow" />
-  <meta name="language" content="Vietnamese" />
-  <meta name="revisit-after" content="7 days" />
+	<head>
+		<!-- Primary Meta Tags -->
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta name="title" content="{{ title }}"/>
+		<meta name="description" content="{{ description | default('Trường Đại học Công nghiệp TP.HCM - IUH là trường đại học công lập đào tạo đa ngành, đa lĩnh vực.') }}"/>
+		<meta name="keywords" content="{{ keywords | default('IUH, Đại học Công nghiệp, Trường Đại học Công nghiệp TP.HCM, tuyển sinh, đào tạo') }}"/>
+		<meta name="author" content="IUH - Industrial University of Ho Chi Minh City"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="language" content="Vietnamese"/>
+		<meta
+		name="revisit-after" content="7 days"/>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ currentUrl | default('https://iuh.edu.vn/') }}" />
-  <meta property="og:title" content="{{ title }}" />
-  <meta property="og:description"
-    content="{{ description | default('Trường Đại học Công nghiệp TP.HCM - IUH là trường đại học công lập đào tạo đa ngành, đa lĩnh vực.') }}" />
-  <meta property="og:image" content="{{ ogImage | default(data.assetPath ~ '/images/og-image.jpg') }}" />
-  <meta property="og:locale" content="vi_VN" />
-  <meta property="og:site_name" content="IUH - Đại học Công nghiệp TP.HCM" />
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="{{ currentUrl | default('https://iuh.edu.vn/') }}"/>
+		<meta property="og:title" content="{{ title }}"/>
+		<meta property="og:description" content="{{ description | default('Trường Đại học Công nghiệp TP.HCM - IUH là trường đại học công lập đào tạo đa ngành, đa lĩnh vực.') }}"/>
+		<meta property="og:image" content="{{ ogImage | default(data.assetPath ~ '/images/og-image.jpg') }}"/>
+		<meta property="og:locale" content="vi_VN"/>
+		<meta
+		property="og:site_name" content="IUH - Đại học Công nghiệp TP.HCM"/>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="{{ currentUrl | default('https://iuh.edu.vn/') }}" />
-  <meta name="twitter:title" content="{{ title }}" />
-  <meta name="twitter:description"
-    content="{{ description | default('Trường Đại học Công nghiệp TP.HCM - IUH là trường đại học công lập đào tạo đa ngành, đa lĩnh vực.') }}" />
-  <meta name="twitter:image" content="{{ ogImage | default(data.assetPath ~ '/images/og-image.jpg') }}" />
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:url" content="{{ currentUrl | default('https://iuh.edu.vn/') }}"/>
+		<meta name="twitter:title" content="{{ title }}"/>
+		<meta name="twitter:description" content="{{ description | default('Trường Đại học Công nghiệp TP.HCM - IUH là trường đại học công lập đào tạo đa ngành, đa lĩnh vực.') }}"/>
+		<meta
+		name="twitter:image" content="{{ ogImage | default(data.assetPath ~ '/images/og-image.jpg') }}"/>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-16x16.png" sizes="16x16" />
-  <link rel="apple-touch-icon" href="assets/images/favicons/apple-touch-icon.png" />
-  <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="assets/images/favicons/favicon-32x32.png" sizes="32x32"/>
+		<link rel="icon" type="image/png" href="assets/images/favicons/favicon-16x16.png" sizes="16x16"/>
+		<link rel="apple-touch-icon" href="assets/images/favicons/apple-touch-icon.png"/>
+		<link
+		rel="manifest" href="assets/images/favicons/site.webmanifest"/>
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ currentUrl | default('https://iuh.edu.vn/') }}" />
+		<!-- Canonical URL -->
+		<link
+		rel="canonical" href="{{ currentUrl | default('https://iuh.edu.vn/') }}"/>
 
-  <!-- meta tag for background header mobile -->
-  <meta name="theme-color" content="#000080">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<!-- meta tag for background header mobile -->
+		<meta name="theme-color" content="#000080">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <title>{{ title }} | IUH - Đại học Công nghiệp TP.HCM</title>
+		<title>{{ title }}
+			| IUH - Đại học Công nghiệp TP.HCM</title>
 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- inject:css -->
-   <!-- endinject -->
-</head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<!-- inject:css -->
+		<!-- endinject -->
+	</head>
 
-<body data-module="HelloModule">
+	<body
+		data-module="HelloModule">
 
-  <!-- HEADER -->
-  {% include './header.twig' %}
-  <!-- MAIN CONTENT -->
-  <main class="iuhMainContent opacity-0 {{ pageClass ?? '' }}">
+		<!-- HEADER -->
+		{% include './header.twig' %}
+		<!-- MAIN CONTENT -->
+		<main class="iuhMainContent opacity-0 {{ pageClass ?? '' }}">
 
-    {% if breadcrumbs is defined %}
-      {% include './components/_Breadcrumb.twig' with {
+			{% if breadcrumbs is defined %}
+				{% include './components/_Breadcrumb.twig' with {
         breadcrumbs: breadcrumbs
       } %}
-    {% endif %}
-    {% block page %}{% endblock %}
-    <!-- FOOTER -->
-    {% include './footer.twig' %}
-  </main>
-  <!---->
+			{% endif %}
+			{% block page %}{% endblock %}
+			<!-- FOOTER -->
+			{% include './footer.twig' %}
+		</main>
+		<!---->
 
-  <!-- Loading -->
-  {% include './components/_Loading.twig' %}
-  <!-- Modal -->
-  {% include './components/_Modal.twig' with {
-  id: 'onSearch',
-  title: 'Tìm kiếm',
-  body: '
-  <div class="max-w-2xl mx-auto w-full px-4 md:px-0">
-    <form action="" class="w-full">
-      <div class="relative">
-        <div class="relative group">
-          <div class="absolute inset-y-0 left-3 md:left-4 flex items-center pointer-events-none text-gray-400">
-            <svg class="w-5 h-5 shrink-0">
-              <path
-                d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-                stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
-          <input type="text"
-            class="w-full h-12 md:h-14 bg-white text-sm md:text-base border-2 rounded-lg md:rounded-xl pl-10 md:pl-12 pr-[4.5rem] md:pr-14 outline-none text-gray-900 border-gray-100 placeholder:text-gray-400 transition-all duration-300 shadow-sm group-hover:border-navyBlue-200 focus:border-navyBlue-600 focus:shadow-[0_0_0_4px_rgba(0,0,207,0.1)]"
-            placeholder="Nhập từ khóa tìm kiếm..." autocomplete="off" />
-          <button type="submit"
-            class="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 px-2 md:px-3 py-1.5 rounded-lg text-white bg-navyBlue-800 hover:bg-navyBlue-700 transition-all duration-300 text-xs md:text-sm font-medium active:scale-95">
-            Tìm kiếm
-          </button>
-        </div>
-        <div class="mt-2 text-[11px] md:text-xs text-gray-500 text-center md:text-left">
-          Nhấn Enter để tìm kiếm hoặc ESC để đóng
-        </div>
-      </div>
-    </form>
-  </div>
-  '
-  } %}
+		<!-- Contact Modal -->
+		<div id="contactModal" class="fixed inset-0 top-0 z-50 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none backdrop-blur-sm bg-black/60 px-2">
+			<div class="relative w-full max-w-2xl p-0 rounded-2xl shadow-2xl border-0">
+				<div
+					class="relative bg-gradient-to-br from-navyBlue-800 via-navyBlue-600 to-navyBlue-400 rounded-2xl p-0 m-0 flex flex-col md:flex-row"
+				>
+					<!-- Left: Contact Info -->
+					<div class="flex flex-col gap-6 justify-center md:w-1/2 w-full p-4 sm:p-6 md:p-8">
+						<h3 class="text-xl sm:text-2xl font-extrabold text-navyBlue-50 mb-2 sm:mb-4 text-left md:text-center tracking-wide">Contact Us</h3>
+						<div class="flex flex-col gap-4 sm:gap-6">
+							<div class="flex items-start gap-3 sm:gap-4">
+								<span class="text-navyBlue-50 text-2xl sm:text-3xl">
+									<i class="fa-solid fa-phone"></i>
+								</span>
+								<div>
+									<div class="font-bold text-navyBlue-100 text-sm sm:text-base">Call</div>
+									<div class="text-navyBlue-100 text-xs sm:text-sm">084524145547</div>
+								</div>
+							</div>
+							<div class="flex items-start gap-3 sm:gap-4">
+								<span class="text-navyBlue-50 text-2xl sm:text-3xl">
+									<i class="fa-solid fa-envelope"></i>
+								</span>
+								<div>
+									<div class="font-bold text-navyBlue-100 text-sm sm:text-base">Email</div>
+									<div class="text-navyBlue-100 text-xs sm:text-sm">loremipsum@gmail.com</div>
+								</div>
+							</div>
+							<div class="flex items-start gap-3 sm:gap-4">
+								<span class="text-navyBlue-50 text-2xl sm:text-3xl">
+									<i class="fa-solid fa-map-location-dot"></i>
+								</span>
+								<div>
+									<div class="font-bold text-navyBlue-100 text-sm sm:text-base">Location</div>
+									<div class="text-navyBlue-100 text-xs sm:text-sm">Bandung, Indonesia</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Right: Form -->
+					<div class="md:w-1/2 w-full p-4 sm:p-6 md:p-8 bg-white rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none flex flex-col justify-center">
+						<button id="closeContactModal" class="close-contact-modal absolute top-2 right-2 sm:-top-4 sm:-right-4 bg-white border border-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 hover:text-navyBlue-600 hover:bg-orange-50 shadow transition-all text-xl sm:text-2xl font-bold z-10">&times;</button>
+						<form class="flex flex-col gap-3 sm:gap-4 mt-4 md:mt-0">
+							<input type="text" placeholder="Name" class="border border-gray-200 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-navytext-navyBlue-600 transition placeholder-gray-400 bg-gray-50 text-sm sm:text-base" required/>
+							<input type="phone" placeholder="Phone number" class="border border-gray-200 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-navytext-navyBlue-600 transition placeholder-gray-400 bg-gray-50 text-sm sm:text-base" required/>
+							<input type="email" placeholder="Email address" class="border border-gray-200 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-navytext-navyBlue-600 transition placeholder-gray-400 bg-gray-50 text-sm sm:text-base" required/>
+							<textarea placeholder="Message" rows="4" class="border border-gray-200 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-navytext-navyBlue-600 transition placeholder-gray-400 bg-gray-50 resize-none text-sm sm:text-base" required></textarea>
+							<button type="submit" class="w-full bg-navyBlue-700 py-2.5 sm:py-3 mt-2 text-white font-bold rounded-lg text-sm sm:text-base shadow-md bg-navytext-navyBlue-600 hover:bg-navyBlue-500 active:scale-95 transition-all tracking-wide uppercase">Send Now</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Loading -->
+		{% include './components/_Loading.twig' %}
+		{% include './components/_SocialFixed.twig' %}
+	</body>
 
-  {% include './components/_SocialFixed.twig' %}
-</body>
-
-<!-- inject:js -->
-<!-- endinject -->
+	<!-- inject:js -->
+	<!-- endinject -->
 
 </html>

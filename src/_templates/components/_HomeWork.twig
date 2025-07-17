@@ -3,7 +3,9 @@
     class="w-full max-w-[1200px] px-4 md:px-[10px] mx-auto py-12 md:py-20 flex flex-col md:flex-row items-center gap-5"
   >
     <!-- Left section -->
-    <div class="flex-1 flex flex-col items-start justify-center w-full lg:max-w-[350px]">
+    <div
+      class="flex-1 flex flex-col items-start justify-center w-full lg:w-4/12 shrink-0"
+    >
       <h2
         class="font-lexend text-4xl md:text-[40px] font-bold text-black mb-4 leading-tight w-full"
       >
@@ -17,36 +19,48 @@
       '/nghien-cuu', text: 'Xem Thêm' } %}
     </div>
     <!-- Right section: 3 images -->
-    <div class="flex-1 flex flex-row gap-6 w-full justify-center">
-      <div
-        class="aspect-[280/380] rounded-xl overflow-hidden image-hover shadow-md bg-white flex items-center justify-center  transform hover:-translate-y-2 hover:shadow-research transition-all duration-500 ease-out"
-      >
-        <a href="#"
-          ><img
-            src="assets/images/hoatdong.jpg"
-            alt="Hoạt động 1"
-            class="object-cover w-full h-full"
-        /></a>
-      </div>
-      <div
-        class="aspect-[280/380] rounded-xl overflow-hidden image-hover shadow-md bg-white flex items-center justify-center transform hover:-translate-y-2 hover:shadow-research transition-all duration-500 ease-out"
-      >
-        <a href="#"
-          ><img
-            src="assets/images/hoatdong.jpg"
-            alt="Hoạt động 1"
-            class="object-cover w-full h-full"
-        /></a>
-      </div>
-      <div
-        class="aspect-[280/380] rounded-xl overflow-hidden image-hover shadow-md bg-white flex items-center justify-center transform hover:-translate-y-2 hover:shadow-research transition-all duration-500 ease-out"
-      >
-        <a href="#"
-          ><img
-            src="assets/images/hoatdong.jpg"
-            alt="Hoạt động 1"
-            class="object-cover w-full h-full"
-        /></a>
+    <div class="flex-1 w-full md:w-8/12">
+      <div class="swiper_actives swiper" data-module="HomeActives">
+        <div class="swiper-wrapper">
+          {% for i in 1..2 %}
+          <div class="swiper-slide">
+            <div
+              class="aspect-[280/380] rounded-xl overflow-hidden image-hover shadow-md bg-white flex items-center justify-center transform hover:-translate-y-2 hover:shadow-research transition-all duration-500 ease-out"
+            >
+              <a href="#" class="w-full h-full"
+                ><img
+                  src="https://rdtech.iuh.edu.vn/upload/images/hoatdong/hd3.jpeg"
+                  alt="Hoạt động 1"
+                  class="object-cover w-full h-full"
+              /></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="aspect-[280/380] rounded-xl overflow-hidden image-hover shadow-md bg-white flex items-center justify-center transform hover:-translate-y-2 hover:shadow-research transition-all duration-500 ease-out"
+            >
+              <a href="#" class="w-full h-full"
+                ><img
+                  src="https://rdtech.iuh.edu.vn/upload/images/hoatdong/hd2.jpg"
+                  alt="Hoạt động 1"
+                  class="object-cover w-full h-full"
+              /></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="aspect-[280/380] rounded-xl overflow-hidden image-hover shadow-md bg-white flex items-center justify-center transform hover:-translate-y-2 hover:shadow-research transition-all duration-500 ease-out"
+            >
+              <a href="#" class="w-full h-full"
+                ><img
+                  src="https://rdtech.iuh.edu.vn/upload/images/hoatdong/hd1.jpg"
+                  alt="Hoạt động 1"
+                  class="object-cover w-full h-full"
+              /></a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>

@@ -12,16 +12,21 @@ export default class HomeActives extends BaseModule {
     // ptck
     this.slidefull = new Swiper(".swiper_actives", {
       loop: true,
-      speed: 1000,
-      slidesPerView: 1.2,
+      speed: 3000,
+      slidesPerView: 2.2,
       spaceBetween: 10,
+      loopAdditionalSlides: 4,
+      loopedSlides: 4,
+      grabCursor: true,
       autoplay: {
-        delay: 4000,
+        delay: 0,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+        waitForTransition: true,
       },
       breakpoints: {
         768: {
-          slidesPerView: 3,
+          slidesPerView: 3.2,
           spaceBetween: 20,
         },
       },
