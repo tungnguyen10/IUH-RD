@@ -1,47 +1,132 @@
-{% extends "./_templates/layout.twig" %}
-{# If rename this file, rename in gulp
-'html' task as well #}
-{% set breadcrumbs = [ { title: 'Bảng giá', url:
-'/table' } ] %}
-{% set pageClass = 'iuhTable' %}
-{% block page %}
-	<div class="w-full py-4 pb-6 lg:pt-0 lg:pb-16 relative">
-		<div class="w-full max-w-[1200px] px-4 mx-auto">
-			<div class="bg-white rounded-xl border border-gray-200 shadow-md p-6 sm:p-8 mb-10">
-				<h2 class="text-xl sm:text-2xl font-semibold text-navyBlue-800 mb-6">
-					Bảng giá
-				</h2>
-				<div class="overflow-x-auto">
-					<table class="w-full min-w-[750px] bg-white border border-gray-200 rounded-lg overflow-hidden text-sm md:text-base">
-						<thead>
-							<tr class="bg-navyBlue-50 text-navyBlue-800">
-								<th class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap">STT</th>
-								<th class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap">Tên sản phẩm</th>
-								<th class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap">Mô tả</th>
-								<th class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap">Hình ảnh</th>
-								<th class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap">Liên hệ</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for i in 1..5 %}
-								<tr class="hover:bg-navyBlue-50 transition-colors">
-									<td class="px-4 py-3 border-b align-middle text-center">{{ i }}</td>
-									<td class="px-4 py-3 border-b align-middle text-center font-medium">Sản phẩm {{ i }}</td>
-									<td class="px-4 py-3 border-b align-middle text-center">Mô tả ngắn về sản phẩm {{ i }}. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td class="px-4 py-3 border-b align-middle text-center">
-										<img src="assets/images/default.png" alt="Sản phẩm {{ i }}" class="w-16 h-16 object-cover rounded shadow border border-gray-100 mx-auto"/>
-									</td>
-									<td class="px-4 py-3 border-b align-middle text-center whitespace-nowrap min-w-[110px]">
-										<p class="bg-navyBlue-600 cursor-pointer flex justify-center items-center px-4 py-2 text-white font-semibold rounded-lg text-xs md:text-sm shadow transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-navyBlue-400 animate-none hover:animate-pulse whitespace-nowrap min-w-[110px] contact-btn">
-											Liên hệ
-										</p>
-									</td>
-									
-								</tr>
-							{% endfor %}
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	{% endblock %}
+{% extends "./_templates/layout.twig" %} {# If rename this file, rename in gulp
+'html' task as well #} {% set breadcrumbs = [ { title: 'Bảng giá', url: '/table'
+} ] %} {% set pageClass = 'iuhTable' %} {% block page %}
+<div class="w-full py-4 pb-6 lg:pt-0 lg:pb-16 relative">
+  <div class="w-full max-w-[1200px] px-4 mx-auto">
+    <div
+      class="bg-white rounded-xl border border-gray-200 shadow-md p-6 sm:p-8 mb-10"
+    >
+      <h2 class="text-xl sm:text-2xl font-semibold text-navyBlue-800 mb-6">
+        Bảng giá
+      </h2>
+      <form class="flex flex-col sm:flex-row gap-3 mb-6">
+        <input
+          type="text"
+          class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-navyBlue-400 w-full flex-1 text-base font-semibold text-navyBlue-800"
+          placeholder="Tìm kiếm sản phẩm..."
+        />
+        <div class="relative w-full sm:w-1/4 shrink-0">
+          <select
+            class="appearance-none border border-gray-300 bg-white rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-navyBlue-400 shadow-sm w-full text-base font-semibold text-navyBlue-800 transition duration-200"
+          >
+            <option value="">Tất cả loại sản phẩm</option>
+            <option value="1">Loại 1</option>
+            <option value="2">Loại 2</option>
+            <option value="3">Loại 3</option>
+          </select>
+          <!-- Custom arrow icon -->
+          <div
+            class="pointer-events-none absolute inset-y-0 right-3 flex items-center"
+          >
+            <svg
+              class="w-5 h-5 text-navyBlue-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="rounded-md border border-navyBlue-400 py-2 px-4 bg-navyBlue-50 text-center text-base transition-all shadow-md hover:shadow-xl text-navyBlue-800 hover:text-white hover:bg-navyBlue-600 hover:border-navyBlue-800 duration-300 font-bold uppercase flex gap-2 items-center justify-center"
+        >
+          Tìm kiếm
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div class="overflow-x-auto">
+        <table
+          class="w-full min-w-[750px] bg-white border border-gray-200 rounded-lg overflow-hidden text-sm md:text-base"
+        >
+          <thead>
+            <tr class="bg-navyBlue-50 text-navyBlue-800">
+              <th
+                class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap"
+              >
+                STT
+              </th>
+              <th
+                class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap"
+              >
+                Lĩnh vực
+              </th>
+              <th
+                class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap"
+              >
+                Tên sản phẩm
+              </th>
+              <th
+                class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap"
+              >
+                Mô tả
+              </th>
+              <th
+                class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap"
+              >
+                Hình ảnh
+              </th>
+              <th
+                class="px-4 py-3 border-b font-semibold text-center align-middle whitespace-nowrap"
+              >
+                Liên hệ
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in 1..5 %}
+            <tr class="hover:bg-navyBlue-50 transition-colors">
+              <td class="px-4 py-3 border-b align-middle text-center">
+                {{ i }}
+              </td>
+              <td
+                class="px-4 py-3 border-b align-middle text-center font-medium"
+              >
+                Lĩnh vực {{ i }}
+              </td>
+              <td
+                class="px-4 py-3 border-b align-middle text-center font-medium"
+              >
+                Sản phẩm {{ i }}
+              </td>
+              <td class="px-4 py-3 border-b align-middle text-center">
+                Mô tả ngắn về sản phẩm {{ i }}. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit.
+              </td>
+              <td class="px-4 py-3 border-b align-middle text-center">
+                <img
+                  src="assets/images/default.png"
+                  alt="Sản phẩm {{ i }}"
+                  class="w-16 h-16 object-cover rounded shadow border border-gray-100 mx-auto"
+                />
+              </td>
+              <td
+                class="px-4 py-3 border-b align-middle text-center whitespace-nowrap min-w-[110px]"
+              >
+                <p
+                  class="bg-navyBlue-600 cursor-pointer flex justify-center items-center px-4 py-2 text-white font-semibold rounded-lg text-xs md:text-sm shadow transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-navyBlue-400 animate-none hover:animate-pulse whitespace-nowrap min-w-[110px] contact-btn"
+                >
+                  Liên hệ
+                </p>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
